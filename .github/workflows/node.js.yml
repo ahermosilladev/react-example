@@ -27,8 +27,12 @@ jobs:
         git config user.name "ahermosilladev"
         git config user.email "$USERNAME"
         git remote set-url origin "https://$TOKEN@github.com/ahermosilladev/react-example"
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        TOKEN: ${{ secrets.TOKEN }}
     - run: rm -r package-lock.json
     - run: npm i
     - run: npm run build
+    - name: Deploy to GH Pages
     - run: npm run deploy
 

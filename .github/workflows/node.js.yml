@@ -33,6 +33,5 @@ jobs:
     - run: rm -r package-lock.json
     - run: npm i
     - run: npm run build
-    - name: Deploy to GH Pages
     - run: npm run deploy
 
